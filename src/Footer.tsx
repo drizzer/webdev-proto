@@ -6,6 +6,7 @@ import { CgProfile } from "react-icons/cg";
 export function Footer() {
   return (
     <Box mt="2rem" boxShadow="md">
+      <CgProfile />
       <Text textAlign="center">Powered by CodePlay Masters</Text>
     </Box>
   );

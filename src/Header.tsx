@@ -13,6 +13,7 @@ import {
   MenuDivider,
   Kbd,
   Box,
+  Text,
 } from "@chakra-ui/react";
 
 import { CgProfile } from "react-icons/cg";
@@ -20,19 +21,21 @@ import { CgProfile } from "react-icons/cg";
 export function Header() {
   return (
     <Center>
-      <HStack mt="1rem" alignContent="center" alignItems="space-around">
-        <Heading textAlign="center" mb="1em">
+      <HStack mt="1rem" alignContent="center" spacing="15%">
+        <Heading textAlign="center" mb="1em" size={"40%"} fontSize={"lg"}>
           NewReleases.games
         </Heading>
         <Menu>
           <MenuButton
             as={Button}
             colorScheme="yellow"
+            boxSize="15%"
             leftIcon={<CgProfile />}
             // command="⌘⇧N"
+            px={"2"}
           >
-            Profile {}
-            <Kbd>Ctrl</Kbd> + <Kbd>P</Kbd>
+            <Text>Profile</Text> {}
+            <Text fontSize={"xs"}><Kbd>Ctrl</Kbd> + <Kbd>P</Kbd></Text>
           </MenuButton>
           <MenuList>
             <MenuGroup>
