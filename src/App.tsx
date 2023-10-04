@@ -1,11 +1,18 @@
-import { Heading, VStack } from "@chakra-ui/react";
 import * as React from "react";
+import { VStack, Center } from "@chakra-ui/react";
+
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { TabCategoryContent } from "./TabCategoryContent";
 
 export function App() {
   return (
     <>
-      <Heading textAlign="center">Home Page</Heading>
-      <VStack></VStack>
+      <Header />
+      <VStack>
+        <TabCategoryContent />
+      </VStack>
+      <Footer />
     </>
   );
 }

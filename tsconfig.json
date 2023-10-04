@@ -1,12 +1,7 @@
 {
-    "include": [
-        "./src/*"
-    ],
-    "compilerOptions": {
-        "lib": [
-            "dom",
-            "es2015"
-        ],
-        "jsx": "react"
-    }
+  "include": ["./src/*"],
+  "compilerOptions": {
+    "lib": ["dom", "ES6"],
+    "jsx": "react"
+  }
 }
