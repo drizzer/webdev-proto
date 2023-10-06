@@ -15,12 +15,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { CardItem } from "../components/CardItem";
+import FormLogin from "../forms/FormLogin";
+import FormOrder from "../forms/FormOrder";
+import CardItem from "../components/CardItem";
 
-export function CardItem() {
-  const [isLoaded, setIsLoaded] = React.useState(false);
+export function StorePage() {
   return (
-    <Tabs isFitted variant="soft-rounded">
+    <Tabs isFitted variant="soft-rounded" pos="static">
       <TabList>
         <Tab
           _selected={{
@@ -60,38 +61,22 @@ export function CardItem() {
         </Tab>
       </TabList>
 
+      {/* Tab Content */}
+
       <TabPanels>
         <TabPanel>
-          <Heading size="md">Last Releases for PC</Heading>
+          <FormLogin />
+        </TabPanel>
+
+        <TabPanel w="20rem">
+          <CardItem />
         </TabPanel>
 
         <TabPanel>
-          <Center>
-            <VStack>
-              <Text mb="1em">Last Releases for Xbox One and Series S|X</Text>
-            </VStack>
-          </Center>
+          <FormOrder />
         </TabPanel>
 
-        <TabPanel>
-          <Stack padding={2} spacing=".5rem" align="center">
-            <Box textAlign="center">
-              <Button onClick={() => setIsLoaded((v) => !v)}>ready</Button>
-            </Box>
-            <CardItem isLoaded={isLoaded} />
-          </Stack>
-        </TabPanel>
-
-        <TabPanel>
-          <p>Last Releases for Switch</p>
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="yellow.500"
-            size="xl"
-          />
-        </TabPanel>
+        <TabPanel></TabPanel>
       </TabPanels>
     </Tabs>
   );

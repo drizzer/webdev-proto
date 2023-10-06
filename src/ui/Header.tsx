@@ -31,7 +31,7 @@ export function Header() {
       pos="fixed"
       w="100%"
       top="0"
-      backgroundColor="gray.300"
+      bg="blackAlpha.700"
       borderBottom="2px solid yellow"
     >
       <Button textAlign="center">yalla.com.tn</Button>
@@ -46,7 +46,7 @@ export function Header() {
           // command="⌘⇧N"
         >
           <Flex align="center" gap=".25rem">
-            Profile
+            Account
             <Text fontSize="xs">
               <Flex flexDir="column" align="center">
                 <Kbd>Ctrl</Kbd> + <Kbd>P</Kbd>
@@ -64,7 +64,7 @@ export function Header() {
                 alt="Fluffybuns the destroyer"
                 mr="12px"
               />
-              <span>My Account</span>
+              <span>Profile</span>
             </MenuItem>
             <MenuItem>Wishlist</MenuItem>
           </MenuGroup>
