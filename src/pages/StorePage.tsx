@@ -15,13 +15,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { CardGame } from "./CardGame";
+import { CardItem } from "../components/CardItem";
 
-export function TabCategoryContent() {
+export function CardItem() {
   const [isLoaded, setIsLoaded] = React.useState(false);
   return (
     <Tabs isFitted variant="soft-rounded">
-      <TabList mb="1em">
+      <TabList>
         <Tab
           _selected={{
             color: "white",
@@ -29,7 +29,7 @@ export function TabCategoryContent() {
             boxShadow: "dark-lg",
           }}
         >
-          PC
+          Category
         </Tab>
         <Tab
           _selected={{
@@ -38,7 +38,7 @@ export function TabCategoryContent() {
             boxShadow: "dark-lg",
           }}
         >
-          XBOX
+          Item
         </Tab>
         <Tab
           _selected={{
@@ -47,7 +47,7 @@ export function TabCategoryContent() {
             boxShadow: "dark-lg",
           }}
         >
-          PlayStation
+          Order
         </Tab>
         <Tab
           _selected={{
@@ -56,7 +56,7 @@ export function TabCategoryContent() {
             boxShadow: "dark-lg",
           }}
         >
-          SWITCH
+          Dashboard
         </Tab>
       </TabList>
 
@@ -69,13 +69,6 @@ export function TabCategoryContent() {
           <Center>
             <VStack>
               <Text mb="1em">Last Releases for Xbox One and Series S|X</Text>
-              <Spinner
-                thickness="4px"
-                speed="0.65s"
-                emptyColor="gray.200"
-                color="yellow.500"
-                size="xl"
-              />
             </VStack>
           </Center>
         </TabPanel>
@@ -85,12 +78,19 @@ export function TabCategoryContent() {
             <Box textAlign="center">
               <Button onClick={() => setIsLoaded((v) => !v)}>ready</Button>
             </Box>
-            <CardGame isLoaded={isLoaded} />
+            <CardItem isLoaded={isLoaded} />
           </Stack>
         </TabPanel>
 
         <TabPanel>
           <p>Last Releases for Switch</p>
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="yellow.500"
+            size="xl"
+          />
         </TabPanel>
       </TabPanels>
     </Tabs>
