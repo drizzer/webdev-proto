@@ -18,20 +18,12 @@ import {
 import FormLogin from "../forms/FormLogin";
 import FormOrder from "../forms/FormOrder";
 import CardItem from "../components/CardItem";
+import DashboardPage from "../pages/DashboardPage";
 
 export function StorePage() {
   return (
     <Tabs isFitted variant="soft-rounded" pos="static">
-      <TabList>
-        <Tab
-          _selected={{
-            color: "white",
-            bg: "gray.500",
-            boxShadow: "dark-lg",
-          }}
-        >
-          Category
-        </Tab>
+      <TabList mb="2rem">
         <Tab
           _selected={{
             color: "white",
@@ -53,6 +45,15 @@ export function StorePage() {
         <Tab
           _selected={{
             color: "white",
+            bg: "gray.500",
+            boxShadow: "dark-lg",
+          }}
+        >
+          AuthForm
+        </Tab>
+        <Tab
+          _selected={{
+            color: "white",
             bg: "red.500",
             boxShadow: "dark-lg",
           }}
@@ -65,10 +66,6 @@ export function StorePage() {
 
       <TabPanels>
         <TabPanel>
-          <FormLogin />
-        </TabPanel>
-
-        <TabPanel w="20rem">
           <CardItem />
         </TabPanel>
 
@@ -76,7 +73,13 @@ export function StorePage() {
           <FormOrder />
         </TabPanel>
 
-        <TabPanel></TabPanel>
+        <TabPanel>
+          <FormLogin />
+        </TabPanel>
+
+        <TabPanel>
+          <DashboardPage />
+        </TabPanel>
       </TabPanels>
     </Tabs>
   );

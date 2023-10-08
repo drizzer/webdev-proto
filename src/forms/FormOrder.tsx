@@ -1,4 +1,3 @@
-import { Formik, Field } from "formik";
 import * as React from "react";
 import {
   FormErrorMessage,
@@ -10,26 +9,35 @@ import {
   Flex,
   Input,
   VStack,
+  RadioGroup,
+  Radio,
+  HStack,
 } from "@chakra-ui/react";
+
+import { Formik, Field } from "formik";
+
+import { FaRegFaceSadTear } from "react-icons/fa6";
 
 export default function FormOrder() {
   return (
     <Flex bg="gray.100" align="center" justify="center" h="auto">
-      <Box bg="white" p={6} m="6" rounded="md" w={64}>
+      <Box bg="white" p={2} m="2" rounded="md" w="full">
         <Formik
           initialValues={{
             name: "",
             password: "",
             rememberMe: false,
+            shipping: "",
           }}
-          onSubmit={(values) => {
+          onSubmit={async (values) => {
+            await new Promise((r) => setTimeout(r, 500));
             alert(JSON.stringify(values, null, 2));
           }}
         >
           {({ handleSubmit, errors, touched }) => (
             <form onSubmit={handleSubmit}>
               <VStack spacing={4} align="flex-start">
-                <FormControl>
+                <FormControl isRequired>
                   <FormLabel htmlFor="name">Full Name</FormLabel>
                   <Field
                     as={Input}
@@ -37,6 +45,7 @@ export default function FormOrder() {
                     name="name"
                     type="text"
                     variant="filled"
+                    placeholder="Foulen Ben Foulen"
                   />
                 </FormControl>
                 {/* Date of Birth Address City Postal-Code State Country E-Mail Phone Number Couponcode*/}
@@ -67,11 +76,29 @@ export default function FormOrder() {
                   name="rememberMe"
                   colorScheme="purple"
                 >
-                  Package as a Gift?
+                  Cadeau?
                 </Field>
 
+                <RadioGroup id="my-radio-group" defaultValue="1">
+                  <HStack
+                    spacing={5}
+                    direction="row"
+                    role="group"
+                    aria-labelledby="my-radio-group"
+                  >
+                    <label>
+                      <Field type="radio" name="picked" value="One" />
+                      {} Simple
+                    </label>
+                    <label>
+                      <Field type="radio" name="picked" value="Two" /> {} Rapide
+                      (1-2 Jour)
+                    </label>
+                  </HStack>
+                </RadioGroup>
+
                 <Button type="submit" colorScheme="purple" width="full">
-                  Order
+                  3adi commande
                 </Button>
               </VStack>
             </form>

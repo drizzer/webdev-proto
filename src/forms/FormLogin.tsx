@@ -1,4 +1,3 @@
-import { Formik, Field } from "formik";
 import * as React from "react";
 import {
   FormErrorMessage,
@@ -10,12 +9,20 @@ import {
   Flex,
   Input,
   VStack,
+  Link,
+  Text,
+  HStack,
+  Divider,
 } from "@chakra-ui/react";
+
+import { Formik, Field } from "formik";
+
+import { FaRegFaceSadTear } from "react-icons/fa6";
 
 export default function FormLogin() {
   return (
     <Flex bg="gray.100" align="center" justify="center" h="auto">
-      <Box bg="white" p={6} m="6" rounded="md" w={64}>
+      <Box bg="white" p="2" m="2" rounded="md" w="full">
         <Formik
           initialValues={{
             email: "",
@@ -30,7 +37,7 @@ export default function FormLogin() {
             <form onSubmit={handleSubmit}>
               <VStack spacing={4} align="flex-start">
                 <FormControl>
-                  <FormLabel htmlFor="email">Email Address</FormLabel>
+                  <FormLabel htmlFor="email">Email</FormLabel>
                   <Field
                     as={Input}
                     id="email"
@@ -58,17 +65,28 @@ export default function FormLogin() {
                     }}
                   />
                   <FormErrorMessage>{errors.password}</FormErrorMessage>
+                  <Link href="" isExternal>
+                    <HStack justify="end">
+                      <Text color="grey">Pff! nsitou</Text>
+                      <FaRegFaceSadTear color="grey" />
+                    </HStack>
+                  </Link>
                 </FormControl>
+
                 <Field
                   as={Checkbox}
                   id="rememberMe"
                   name="rememberMe"
                   colorScheme="purple"
                 >
-                  Remember me?
+                  Netdhakrek?
                 </Field>
-                <Button type="submit" colorScheme="purple" width="full">
-                  Login
+                <Button type="submit" colorScheme="teal" width="full">
+                  Conecti
+                </Button>
+                <Divider />
+                <Button type="submit" colorScheme="yellow" width="full">
+                  N7eb naamal compte
                 </Button>
               </VStack>
             </form>
