@@ -1,86 +1,76 @@
-import * as React from "react";
-import {
-  VStack,
-  Center,
-  Heading,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  Stack,
-  Box,
-  Button,
-  Spinner,
-  Text,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { VStack, Center, Heading, Tabs, TabList, Tab, TabPanels, TabPanel, Stack, Box, Button, Spinner, Text } from '@chakra-ui/react';
 
-import FormLogin from "../forms/FormLogin";
-import FormOrder from "../forms/FormOrder";
-import CardItem from "../components/CardItem";
-import DashboardPage from "../pages/DashboardPage";
+import LoginForm from '../forms/LoginForm';
+import OrderForm from '../forms/OrderForm';
+import CardItem from '../components/CardItem';
+import DashboardPage from '../pages/DashboardPage';
 
 export function StorePage() {
-  return (
-    <Tabs isFitted variant="soft-rounded" pos="static">
-      <TabList mb="2rem">
-        <Tab
-          _selected={{
-            color: "white",
-            bg: "green.500",
-            boxShadow: "dark-lg",
-          }}
+    return (
+        <Tabs
+            isFitted
+            variant="soft-rounded"
+            pos="static"
         >
-          Item
-        </Tab>
-        <Tab
-          _selected={{
-            color: "white",
-            bg: "blue.500",
-            boxShadow: "dark-lg",
-          }}
-        >
-          Order
-        </Tab>
-        <Tab
-          _selected={{
-            color: "white",
-            bg: "gray.500",
-            boxShadow: "dark-lg",
-          }}
-        >
-          AuthForm
-        </Tab>
-        <Tab
-          _selected={{
-            color: "white",
-            bg: "red.500",
-            boxShadow: "dark-lg",
-          }}
-        >
-          Dashboard
-        </Tab>
-      </TabList>
+            <TabList mb="2rem">
+                <Tab
+                    _selected={{
+                        color: 'white',
+                        bg: 'green.500',
+                        boxShadow: 'dark-lg',
+                    }}
+                >
+                    Item
+                </Tab>
+                <Tab
+                    _selected={{
+                        color: 'white',
+                        bg: 'blue.500',
+                        boxShadow: 'dark-lg',
+                    }}
+                >
+                    Order
+                </Tab>
+                <Tab
+                    _selected={{
+                        color: 'white',
+                        bg: 'gray.500',
+                        boxShadow: 'dark-lg',
+                    }}
+                >
+                    AuthForm
+                </Tab>
+                <Tab
+                    _selected={{
+                        color: 'white',
+                        bg: 'red.500',
+                        boxShadow: 'dark-lg',
+                    }}
+                >
+                    Dashboard
+                </Tab>
+            </TabList>
 
-      {/* Tab Content */}
+            {/* Tab Content */}
 
-      <TabPanels>
-        <TabPanel>
-          <CardItem />
-        </TabPanel>
+            <TabPanels>
+                <TabPanel>
+                    <CardItem />
+                </TabPanel>
 
-        <TabPanel>
-          <FormOrder />
-        </TabPanel>
+                <TabPanel>
+                    <OrderForm />
+                </TabPanel>
 
-        <TabPanel>
-          <FormLogin />
-        </TabPanel>
+                <TabPanel>
+                    <LoginForm />
+                </TabPanel>
 
-        <TabPanel>
-          <DashboardPage />
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
-  );
+                <TabPanel>
+                    <DashboardPage />
+                </TabPanel>
+            </TabPanels>
+        </Tabs>
+    );
 }

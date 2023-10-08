@@ -2,35 +2,44 @@
   "name": "chakra-ui-typescript",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
+  "keywords": [ ],
   "main": "src/index.tsx",
   "dependencies": {
     "@chakra-ui/react": "2.8.1",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@solana/wallet-adapter-react": "^0.15.35",
+    "axios": "^1.5.1",
     "formik": "^2.4.5",
     "framer-motion": "10.16.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^6.16.0",
+    "universal-cookie": "^6.1.1"
   },
   "devDependencies": {
+    "@types/node": "^20.8.3",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "latest"
+    "@vitejs/plugin-react": "^4.1.0",
+    "typescript": "latest",
+    "vite": "^4.4.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "start": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
