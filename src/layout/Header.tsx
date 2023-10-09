@@ -34,7 +34,6 @@ export function Header() {
             bg="blackAlpha.700"
             borderBottom="2px solid yellow"
         >
-            <Button textAlign="center">yalla.com.tn</Button>
             <Button textAlign="center">NewReleases.games</Button>
             <Menu>
                 <MenuButton

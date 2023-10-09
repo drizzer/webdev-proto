@@ -11,8 +11,7 @@ export function App() {
         <Center>
             <Header />
             <VStack mt="10vh">
-                <StorePage />
-                {/* <GamesPage /> */}
+                <GamesPage /> 
             </VStack>
             <Footer />
         </Center>

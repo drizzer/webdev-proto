@@ -10,16 +10,21 @@
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
     "start": {
-      "name": "start",
-      "command": "yarn start",
+      "name": "dev",
+      "command": "yarn dev",
       "runAtStart": true,
       "preview": {
-        "port": 3000
+        "port": 5000
       }
     },
     "build": {
       "name": "build",
-      "command": "yarn build",
+      "command": "yarn start",
+      "runAtStart": false
+    },
+    "preview": {
+      "name": "preview",
+      "command": "yarn preview",
       "runAtStart": false
     },
     "test": {
